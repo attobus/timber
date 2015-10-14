@@ -1,30 +1,31 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
-  compileOptions {
-    sourceCompatibility rootProject.ext.sourceCompatibilityVersion
-    targetCompatibility rootProject.ext.targetCompatibilityVersion
-  }
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+        targetCompatibility rootProject.ext.targetCompatibilityVersion
+    }
 
-  defaultConfig {
-    applicationId 'com.example.timber'
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode 1
-    versionName '1.0.0'
-  }
+    defaultConfig {
+        applicationId 'com.example.timber'
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName '1.0.0'
+    }
 
-  lintOptions {
-    textReport true
-    textOutput 'stdout'
-    ignore 'InvalidPackage'
-  }
+    lintOptions {
+        textReport true
+        textOutput 'stdout'
+        ignore 'InvalidPackage'
+    }
 }
 
 dependencies {
-  compile project(':timber')
-  compile 'com.jakewharton:butterknife:7.0.1'
+    compile project(':timber')
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
